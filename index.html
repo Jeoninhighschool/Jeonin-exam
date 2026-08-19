@@ -2,334 +2,542 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>전인고 시험 족보</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>전인고 시험 족보</title>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    sans-serif;
+
+    background: #f7f7f5;
+
+    color: #171717;
+
+}
+
+
+.container {
+
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+}
+
+
+/* 상단 */
+
+header {
+
+    background: #171717;
+
+    color: white;
+
+    padding: 70px 0 60px;
+
+}
+
+
+.logo {
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    color: #aaa;
+
+    margin-bottom: 20px;
+
+}
+
+
+h1 {
+
+    font-size: 48px;
+
+    margin: 0 0 15px;
+
+}
+
+
+header p {
+
+    color: #ccc;
+
+    margin-bottom: 35px;
+
+}
+
+
+/* 검색 */
+
+.search-box {
+
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 16px 20px;
+
+    max-width: 700px;
+
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 16px;
+
+}
+
+
+/* 본문 */
+
+main {
+
+    padding: 50px 0 80px;
+
+}
+
+
+/* 버튼 */
+
+.grade-buttons {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 50px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.grade-buttons button {
+
+    padding: 11px 20px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 30px;
+
+    background: white;
+
+    cursor: pointer;
+
+}
+
+
+.grade-buttons button:hover {
+
+    background: #171717;
+
+    color: white;
+
+}
+
+
+/* 카드 */
+
+.exam-list {
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(2, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.exam-card {
+
+    background: white;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+}
+
+
+.exam-info {
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.exam-card h3 {
+
+    margin: 0 0 20px;
+
+}
+
+
+.file-buttons {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.file-buttons a {
+
+    text-decoration: none;
+
+    color: #222;
+
+    background: #f3f3f3;
+
+    padding: 9px 12px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+
+}
+
+
+footer {
+
+    padding: 25px 0;
+
+    background: white;
+
+    color: #888;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .exam-list {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    h1 {
+
+        font-size: 38px;
+
+    }
+
+}
+
+</style>
+
 </head>
 
 
 <body>
 
 
-    <header>
+<header>
 
-        <div class="container">
+<div class="container">
 
-            <div class="logo">
-                JEONIN HIGH SCHOOL
-            </div>
-
-            <h1>
-                전인고 시험 족보
-            </h1>
-
-            <p>
-                전인고 학생들을 위한 시험 자료 아카이브
-            </p>
+<div class="logo">
+JEONIN HIGH SCHOOL
+</div>
 
 
-            <div class="search-box">
-
-                <input
-                    id="searchInput"
-                    type="text"
-                    placeholder="시험, 과목, 연도 등을 검색해 보세요"
-                >
-
-            </div>
-
-        </div>
-
-    </header>
+<h1>
+전인고 시험 족보
+</h1>
 
 
-
-    <main>
-
-        <div class="container">
-
-
-            <div class="grade-buttons">
-
-                <button onclick="filterGrade('전체')">
-                    전체
-                </button>
-
-                <button onclick="filterGrade('1학년')">
-                    1학년
-                </button>
-
-                <button onclick="filterGrade('2학년')">
-                    2학년
-                </button>
-
-                <button onclick="filterGrade('3학년')">
-                    3학년
-                </button>
-
-            </div>
+<p>
+전인고 학생들을 위한 시험 자료 아카이브
+</p>
 
 
+<div class="search-box">
 
-            <div class="section-title">
+<input
+id="searchInput"
+type="text"
+placeholder="시험, 과목, 연도 등을 검색해 보세요"
+>
 
-                <h2>
-                    시험 자료
-                </h2>
+</div>
 
-                <p id="resultText">
-                    등록된 시험 자료입니다.
-                </p>
+</div>
 
-            </div>
-
-
-
-            <div
-                class="exam-list"
-                id="examList"
-            ></div>
+</header>
 
 
-        </div>
+<main>
 
-    </main>
+<div class="container">
 
 
+<div class="grade-buttons">
 
-    <footer>
+<button onclick="filterGrade('전체')">
+전체
+</button>
 
-        <div class="container">
+<button onclick="filterGrade('1학년')">
+1학년
+</button>
 
-            전인고 시험 족보
+<button onclick="filterGrade('2학년')">
+2학년
+</button>
 
-        </div>
+<button onclick="filterGrade('3학년')">
+3학년
+</button>
 
-    </footer>
+</div>
+
+
+<h2>
+시험 자료
+</h2>
+
+
+<p id="resultText">
+등록된 시험 자료입니다.
+</p>
+
+
+<div
+id="examList"
+class="exam-list">
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<div class="container">
+
+전인고 시험 족보
+
+</div>
+
+</footer>
 
 
 
 <script>
 
 
-// ============================
-// 시험 자료
-// ============================
-
 const exams = [
 
-    {
-        grade: "3학년",
-        year: "2026",
-        term: "1학기 중간고사",
-        subject: "국어"
-    },
+{
 
-    {
-        grade: "2학년",
-        year: "2026",
-        term: "1학기 중간고사",
-        subject: "영어"
-    },
+grade: "3학년",
 
-    {
-        grade: "1학년",
-        year: "2026",
-        term: "1학기 중간고사",
-        subject: "수학"
-    }
+year: "2026",
+
+term: "1학기 중간고사",
+
+subject: "국어"
+
+},
+
+
+{
+
+grade: "2학년",
+
+year: "2026",
+
+term: "1학기 중간고사",
+
+subject: "영어"
+
+},
+
+
+{
+
+grade: "1학년",
+
+year: "2026",
+
+term: "1학기 중간고사",
+
+subject: "수학"
+
+}
 
 ];
 
-
-// ============================
-// 현재 상태
-// ============================
 
 let selectedGrade = "전체";
 
 let searchText = "";
 
 
-// ============================
-// 시험 자료 표시
-// ============================
-
 function showExams() {
 
 
-    const examList =
-        document.getElementById("examList");
+const examList =
+document.getElementById("examList");
 
 
-    examList.innerHTML = "";
+examList.innerHTML = "";
 
 
-    const filteredExams = exams.filter(function(exam) {
+const filtered =
+exams.filter(function(exam) {
 
 
-        // 학년 필터
-
-        const gradeMatch =
-            selectedGrade === "전체" ||
-            exam.grade === selectedGrade;
-
-
-        // 검색 필터
-
-        const searchTarget =
-            exam.grade +
-            exam.year +
-            exam.term +
-            exam.subject;
+const gradeMatch =
+selectedGrade === "전체"
+||
+exam.grade === selectedGrade;
 
 
-        const searchMatch =
-            searchTarget
-            .toLowerCase()
-            .includes(
-                searchText.toLowerCase()
-            );
+const text =
+exam.grade
++
+exam.year
++
+exam.term
++
+exam.subject;
 
 
-        return gradeMatch && searchMatch;
-
-    });
-
-
-
-    // 결과 없음
-
-    if (filteredExams.length === 0) {
-
-        examList.innerHTML = `
-
-            <div class="exam-card">
-
-                <h3>
-                    검색 결과가 없습니다.
-                </h3>
-
-                <p>
-                    다른 검색어를 입력해 보세요.
-                </p>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
+const searchMatch =
+text.toLowerCase()
+.includes(
+searchText.toLowerCase()
+);
 
 
+return gradeMatch && searchMatch;
 
-    // 시험 카드 생성
-
-    filteredExams.forEach(function(exam) {
-
-
-        const card =
-            document.createElement("div");
+});
 
 
-        card.className =
-            "exam-card";
+filtered.forEach(function(exam) {
 
 
-        card.innerHTML = `
-
-            <div class="exam-info">
-
-                ${exam.year}학년도 ·
-                ${exam.grade} ·
-                ${exam.term}
-
-            </div>
+const card =
+document.createElement("div");
 
 
-            <h3>
-
-                ${exam.subject}
-
-            </h3>
+card.className =
+"exam-card";
 
 
-            <div class="file-buttons">
+card.innerHTML = `
 
-                <a href="#">
-                    시험지
-                </a>
+<div class="exam-info">
 
-                <a href="#">
-                    정답
-                </a>
+${exam.year}학년도 ·
+${exam.grade} ·
+${exam.term}
 
-                <a href="#">
-                    해설
-                </a>
-
-            </div>
-
-        `;
+</div>
 
 
-        examList.appendChild(card);
+<h3>
 
-    });
+${exam.subject}
+
+</h3>
+
+
+<div class="file-buttons">
+
+<a href="#">
+시험지
+</a>
+
+<a href="#">
+정답
+</a>
+
+<a href="#">
+해설
+</a>
+
+</div>
+
+`;
+
+
+examList.appendChild(card);
+
+
+});
 
 
 }
 
-
-
-// ============================
-// 학년 버튼
-// ============================
 
 function filterGrade(grade) {
 
+selectedGrade = grade;
 
-    selectedGrade = grade;
-
-
-    showExams();
-
+showExams();
 
 }
 
 
-
-// ============================
-// 검색창
-// ============================
-
 document
-    .getElementById("searchInput")
-    .addEventListener(
-        "input",
-        function() {
+.getElementById("searchInput")
+.addEventListener(
+"input",
+function() {
 
+searchText = this.value;
 
-            searchText =
-                this.value;
+showExams();
 
+}
+);
 
-            showExams();
-
-
-        }
-    );
-
-
-
-// ============================
-// 처음 실행
-// ============================
 
 showExams();
 
