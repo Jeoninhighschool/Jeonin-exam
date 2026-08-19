@@ -15,8 +15,6 @@
 <body>
 
 
-    <!-- 상단 -->
-
     <header>
 
         <div class="container">
@@ -25,18 +23,14 @@
                 JEONIN HIGH SCHOOL
             </div>
 
-
             <h1>
                 전인고 시험 족보
             </h1>
-
 
             <p>
                 전인고 학생들을 위한 시험 자료 아카이브
             </p>
 
-
-            <!-- 검색창 -->
 
             <div class="search-box">
 
@@ -54,38 +48,32 @@
 
 
 
-    <!-- 본문 -->
-
     <main>
 
         <div class="container">
 
 
-            <!-- 학년 버튼 -->
-
             <div class="grade-buttons">
 
-                <button data-grade="전체">
+                <button onclick="filterGrade('전체')">
                     전체
                 </button>
 
-                <button data-grade="1학년">
+                <button onclick="filterGrade('1학년')">
                     1학년
                 </button>
 
-                <button data-grade="2학년">
+                <button onclick="filterGrade('2학년')">
                     2학년
                 </button>
 
-                <button data-grade="3학년">
+                <button onclick="filterGrade('3학년')">
                     3학년
                 </button>
 
             </div>
 
 
-
-            <!-- 시험 자료 -->
 
             <div class="section-title">
 
@@ -101,8 +89,6 @@
 
 
 
-            <!-- 시험 카드가 들어가는 곳 -->
-
             <div
                 class="exam-list"
                 id="examList"
@@ -114,8 +100,6 @@
     </main>
 
 
-
-    <!-- 하단 -->
 
     <footer>
 
@@ -129,9 +113,228 @@
 
 
 
-    <!-- JavaScript -->
+<script>
 
-    <script src="app.js"></script>
+
+// ============================
+// 시험 자료
+// ============================
+
+const exams = [
+
+    {
+        grade: "3학년",
+        year: "2026",
+        term: "1학기 중간고사",
+        subject: "국어"
+    },
+
+    {
+        grade: "2학년",
+        year: "2026",
+        term: "1학기 중간고사",
+        subject: "영어"
+    },
+
+    {
+        grade: "1학년",
+        year: "2026",
+        term: "1학기 중간고사",
+        subject: "수학"
+    }
+
+];
+
+
+// ============================
+// 현재 상태
+// ============================
+
+let selectedGrade = "전체";
+
+let searchText = "";
+
+
+// ============================
+// 시험 자료 표시
+// ============================
+
+function showExams() {
+
+
+    const examList =
+        document.getElementById("examList");
+
+
+    examList.innerHTML = "";
+
+
+    const filteredExams = exams.filter(function(exam) {
+
+
+        // 학년 필터
+
+        const gradeMatch =
+            selectedGrade === "전체" ||
+            exam.grade === selectedGrade;
+
+
+        // 검색 필터
+
+        const searchTarget =
+            exam.grade +
+            exam.year +
+            exam.term +
+            exam.subject;
+
+
+        const searchMatch =
+            searchTarget
+            .toLowerCase()
+            .includes(
+                searchText.toLowerCase()
+            );
+
+
+        return gradeMatch && searchMatch;
+
+    });
+
+
+
+    // 결과 없음
+
+    if (filteredExams.length === 0) {
+
+        examList.innerHTML = `
+
+            <div class="exam-card">
+
+                <h3>
+                    검색 결과가 없습니다.
+                </h3>
+
+                <p>
+                    다른 검색어를 입력해 보세요.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+
+    // 시험 카드 생성
+
+    filteredExams.forEach(function(exam) {
+
+
+        const card =
+            document.createElement("div");
+
+
+        card.className =
+            "exam-card";
+
+
+        card.innerHTML = `
+
+            <div class="exam-info">
+
+                ${exam.year}학년도 ·
+                ${exam.grade} ·
+                ${exam.term}
+
+            </div>
+
+
+            <h3>
+
+                ${exam.subject}
+
+            </h3>
+
+
+            <div class="file-buttons">
+
+                <a href="#">
+                    시험지
+                </a>
+
+                <a href="#">
+                    정답
+                </a>
+
+                <a href="#">
+                    해설
+                </a>
+
+            </div>
+
+        `;
+
+
+        examList.appendChild(card);
+
+    });
+
+
+}
+
+
+
+// ============================
+// 학년 버튼
+// ============================
+
+function filterGrade(grade) {
+
+
+    selectedGrade = grade;
+
+
+    showExams();
+
+
+}
+
+
+
+// ============================
+// 검색창
+// ============================
+
+document
+    .getElementById("searchInput")
+    .addEventListener(
+        "input",
+        function() {
+
+
+            searchText =
+                this.value;
+
+
+            showExams();
+
+
+        }
+    );
+
+
+
+// ============================
+// 처음 실행
+// ============================
+
+showExams();
+
+
+</script>
 
 
 </body>
