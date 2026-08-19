@@ -17,16 +17,13 @@
 
 body {
     margin: 0;
-
     font-family:
         -apple-system,
         BlinkMacSystemFont,
         "Apple SD Gothic Neo",
         "Noto Sans KR",
         sans-serif;
-
     background: #f7f7f5;
-
     color: #171717;
 }
 
@@ -44,56 +41,44 @@ body {
 header {
     background: #171717;
     color: white;
-
     padding: 65px 0;
 }
 
 .logo {
     font-size: 13px;
-
     letter-spacing: 2px;
-
     color: #999;
-
     margin-bottom: 20px;
 }
 
 header h1 {
     margin: 0 0 15px;
-
     font-size: 48px;
-
     letter-spacing: -2px;
 }
 
 header p {
     margin: 0 0 35px;
-
     color: #ccc;
 }
 
 
-/* 검색 */
+/* =====================
+   검색창
+===================== */
 
 .search-box {
     background: white;
-
     max-width: 700px;
-
     border-radius: 14px;
-
     padding: 16px 20px;
 }
 
 .search-box input {
     width: 100%;
-
     border: none;
-
     outline: none;
-
     font-size: 16px;
-
     color: #222;
 }
 
@@ -106,19 +91,11 @@ main {
     padding: 60px 0 100px;
 }
 
-
-/* 경로 */
-
 .breadcrumb {
     color: #888;
-
     font-size: 14px;
-
     margin-bottom: 20px;
 }
-
-
-/* 제목 */
 
 .section-title {
     margin-bottom: 30px;
@@ -126,13 +103,11 @@ main {
 
 .section-title h2 {
     margin: 0 0 8px;
-
     font-size: 28px;
 }
 
 .section-title p {
     margin: 0;
-
     color: #777;
 }
 
@@ -143,51 +118,35 @@ main {
 
 .selection-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
 }
 
 .selection-card {
     background: white;
-
     border: 1px solid #e5e5e5;
-
     border-radius: 18px;
-
     padding: 35px 25px;
-
     text-align: center;
-
     cursor: pointer;
-
     transition: 0.2s;
 }
 
 .selection-card:hover {
     transform: translateY(-3px);
-
     background: #171717;
-
     color: white;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .selection-card h3 {
     margin: 0 0 10px;
-
     font-size: 22px;
 }
 
 .selection-card p {
     margin: 0;
-
     color: #888;
-
     font-size: 14px;
 }
 
@@ -202,48 +161,33 @@ main {
 
 .subject-list {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
 }
 
 .subject-card {
     background: white;
-
     border: 1px solid #e5e5e5;
-
     border-radius: 16px;
-
     padding: 22px;
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 }
 
 .subject-name {
     font-size: 18px;
-
     font-weight: 600;
 }
 
 .subject-button {
     display: inline-block;
-
     padding: 9px 14px;
-
     border-radius: 9px;
-
     background: #171717;
-
     color: white;
-
     text-decoration: none;
-
     font-size: 13px;
 }
 
@@ -258,17 +202,11 @@ main {
 
 .back-button {
     border: none;
-
     background: none;
-
     padding: 0;
-
     margin-bottom: 25px;
-
     color: #666;
-
     cursor: pointer;
-
     font-size: 14px;
 }
 
@@ -278,18 +216,24 @@ main {
 
 
 /* =====================
+   자료 없음
+===================== */
+
+.no-data {
+    color: #888;
+    padding: 20px 0;
+}
+
+
+/* =====================
    FOOTER
 ===================== */
 
 footer {
     background: white;
-
     border-top: 1px solid #e5e5e5;
-
     padding: 25px 0;
-
     color: #888;
-
     font-size: 13px;
 }
 
@@ -321,6 +265,10 @@ footer {
 
 <body>
 
+
+<!-- =====================
+     HEADER
+===================== -->
 
 <header>
 
@@ -354,6 +302,10 @@ JEONIN HIGH SCHOOL
 
 
 
+<!-- =====================
+     MAIN
+===================== -->
+
 <main>
 
 <div class="container">
@@ -380,19 +332,14 @@ JEONIN HIGH SCHOOL
 
 <div class="selection-grid">
 
-
 <div
     class="selection-card"
     onclick="selectGrade('1학년')"
 >
 
-<h3>
-1학년
-</h3>
+<h3>1학년</h3>
 
-<p>
-1학년 시험 자료
-</p>
+<p>1학년 시험 자료</p>
 
 </div>
 
@@ -402,13 +349,9 @@ JEONIN HIGH SCHOOL
     onclick="selectGrade('2학년')"
 >
 
-<h3>
-2학년
-</h3>
+<h3>2학년</h3>
 
-<p>
-2학년 시험 자료
-</p>
+<p>2학년 시험 자료</p>
 
 </div>
 
@@ -418,16 +361,11 @@ JEONIN HIGH SCHOOL
     onclick="selectGrade('3학년')"
 >
 
-<h3>
-3학년
-</h3>
+<h3>3학년</h3>
 
-<p>
-3학년 시험 자료
-</p>
+<p>3학년 시험 자료</p>
 
 </div>
-
 
 </div>
 
@@ -479,13 +417,9 @@ JEONIN HIGH SCHOOL
     onclick="selectYear('2026학년도')"
 >
 
-<h3>
-2026학년도
-</h3>
+<h3>2026학년도</h3>
 
-<p>
-2026학년도 시험 자료
-</p>
+<p>2026학년도 시험 자료</p>
 
 </div>
 
@@ -495,13 +429,9 @@ JEONIN HIGH SCHOOL
     onclick="selectYear('2025학년도')"
 >
 
-<h3>
-2025학년도
-</h3>
+<h3>2025학년도</h3>
 
-<p>
-2025학년도 시험 자료
-</p>
+<p>2025학년도 시험 자료</p>
 
 </div>
 
@@ -511,13 +441,9 @@ JEONIN HIGH SCHOOL
     onclick="selectYear('2024학년도')"
 >
 
-<h3>
-2024학년도
-</h3>
+<h3>2024학년도</h3>
 
-<p>
-2024학년도 시험 자료
-</p>
+<p>2024학년도 시험 자료</p>
 
 </div>
 
@@ -572,13 +498,9 @@ JEONIN HIGH SCHOOL
     onclick="selectSemester('1학기')"
 >
 
-<h3>
-1학기
-</h3>
+<h3>1학기</h3>
 
-<p>
-1학기 시험 자료
-</p>
+<p>1학기 시험 자료</p>
 
 </div>
 
@@ -588,13 +510,9 @@ JEONIN HIGH SCHOOL
     onclick="selectSemester('2학기')"
 >
 
-<h3>
-2학기
-</h3>
+<h3>2학기</h3>
 
-<p>
-2학기 시험 자료
-</p>
+<p>2학기 시험 자료</p>
 
 </div>
 
@@ -649,13 +567,9 @@ JEONIN HIGH SCHOOL
     onclick="selectExam('중간고사')"
 >
 
-<h3>
-중간고사
-</h3>
+<h3>중간고사</h3>
 
-<p>
-학기 중간 시험
-</p>
+<p>학기 중간 시험</p>
 
 </div>
 
@@ -665,13 +579,9 @@ JEONIN HIGH SCHOOL
     onclick="selectExam('기말고사')"
 >
 
-<h3>
-기말고사
-</h3>
+<h3>기말고사</h3>
 
-<p>
-학기 기말 시험
-</p>
+<p>학기 기말 시험</p>
 
 </div>
 
@@ -712,7 +622,7 @@ JEONIN HIGH SCHOOL
 </h2>
 
 <p>
-원하는 과목의 시험지를 확인하세요.
+등록된 시험지를 확인하세요.
 </p>
 
 </div>
@@ -722,62 +632,8 @@ JEONIN HIGH SCHOOL
     class="subject-list"
     id="subjectList"
 >
-
-
-<!-- 테스트 자료 -->
-
-<div class="subject-card">
-
-<div class="subject-name">
-수학
 </div>
 
-<a
-    class="subject-button"
-    href="./files/june_math.pdf"
-    target="_blank"
->
-시험지 보기
-</a>
-
-</div>
-
-
-<div class="subject-card">
-
-<div class="subject-name">
-국어
-</div>
-
-<a
-    class="subject-button"
-    href="#"
-    onclick="alert('아직 등록된 시험지가 없습니다.'); return false;"
->
-시험지 보기
-</a>
-
-</div>
-
-
-<div class="subject-card">
-
-<div class="subject-name">
-영어
-</div>
-
-<a
-    class="subject-button"
-    href="#"
-    onclick="alert('아직 등록된 시험지가 없습니다.'); return false;"
->
-시험지 보기
-</a>
-
-</div>
-
-
-</div>
 
 </section>
 
@@ -787,6 +643,10 @@ JEONIN HIGH SCHOOL
 </main>
 
 
+
+<!-- =====================
+     FOOTER
+===================== -->
 
 <footer>
 
@@ -804,7 +664,7 @@ JEONIN HIGH SCHOOL
 
 
 /* =====================
-   선택 상태
+   현재 선택 상태
 ===================== */
 
 let selectedGrade = "";
@@ -815,7 +675,14 @@ let selectedSemester = "";
 
 let selectedExam = "";
 
+
+
+/* =====================
+   시험 자료 데이터
+===================== */
+
 const examData = [
+
     {
         grade: "3학년",
         year: "2026학년도",
@@ -824,7 +691,10 @@ const examData = [
         subject: "수학",
         file: "./files/june_math.pdf"
     }
+
 ];
+
+
 
 /* =====================
    모든 화면 숨기기
@@ -865,7 +735,7 @@ function selectGrade(grade) {
         .style.display = "block";
 
     document.getElementById("yearBreadcrumb")
-        .textContent = grade;
+        .textContent = selectedGrade;
 
 }
 
@@ -920,6 +790,77 @@ function selectSemester(semester) {
 
 
 /* =====================
+   과목 표시
+===================== */
+
+function showSubjects() {
+
+    const subjectList =
+        document.getElementById("subjectList");
+
+    subjectList.innerHTML = "";
+
+
+    const filteredData =
+        examData.filter(function(item) {
+
+            return (
+                item.grade === selectedGrade &&
+                item.year === selectedYear &&
+                item.semester === selectedSemester &&
+                item.exam === selectedExam
+            );
+
+        });
+
+
+    if (filteredData.length === 0) {
+
+        subjectList.innerHTML = `
+            <p class="no-data">
+                아직 등록된 시험지가 없습니다.
+            </p>
+        `;
+
+        return;
+    }
+
+
+    filteredData.forEach(function(item) {
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "subject-card";
+
+
+        card.innerHTML = `
+
+            <div class="subject-name">
+                ${item.subject}
+            </div>
+
+            <a
+                class="subject-button"
+                href="${item.file}"
+                target="_blank"
+            >
+                시험지 보기
+            </a>
+
+        `;
+
+
+        subjectList.appendChild(card);
+
+    });
+
+}
+
+
+
+/* =====================
    시험 선택
 ===================== */
 
@@ -931,6 +872,10 @@ function selectExam(exam) {
 
     document.getElementById("subjectScreen")
         .style.display = "block";
+
+
+    showSubjects();
+
 
     document.getElementById("subjectBreadcrumb")
         .textContent =
