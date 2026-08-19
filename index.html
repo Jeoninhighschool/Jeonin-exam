@@ -107,7 +107,7 @@ main {
 }
 
 
-/* 상단 경로 */
+/* 경로 */
 
 .breadcrumb {
     color: #888;
@@ -436,11 +436,11 @@ JEONIN HIGH SCHOOL
 
 
 <!-- =====================
-     2. 학기 선택
+     2. 연도 선택
 ===================== -->
 
 <section
-    id="semesterScreen"
+    id="yearScreen"
     style="display:none;"
 >
 
@@ -452,7 +452,103 @@ JEONIN HIGH SCHOOL
 </button>
 
 
-<div class="breadcrumb" id="semesterBreadcrumb"></div>
+<div
+    class="breadcrumb"
+    id="yearBreadcrumb"
+></div>
+
+
+<div class="section-title">
+
+<h2>
+연도를 선택하세요
+</h2>
+
+<p>
+시험이 실시된 연도를 선택해주세요.
+</p>
+
+</div>
+
+
+<div class="selection-grid">
+
+
+<div
+    class="selection-card"
+    onclick="selectYear('2026학년도')"
+>
+
+<h3>
+2026학년도
+</h3>
+
+<p>
+2026학년도 시험 자료
+</p>
+
+</div>
+
+
+<div
+    class="selection-card"
+    onclick="selectYear('2025학년도')"
+>
+
+<h3>
+2025학년도
+</h3>
+
+<p>
+2025학년도 시험 자료
+</p>
+
+</div>
+
+
+<div
+    class="selection-card"
+    onclick="selectYear('2024학년도')"
+>
+
+<h3>
+2024학년도
+</h3>
+
+<p>
+2024학년도 시험 자료
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================
+     3. 학기 선택
+===================== -->
+
+<section
+    id="semesterScreen"
+    style="display:none;"
+>
+
+<button
+    class="back-button"
+    onclick="goBack('year')"
+>
+← 연도 선택으로
+</button>
+
+
+<div
+    class="breadcrumb"
+    id="semesterBreadcrumb"
+></div>
 
 
 <div class="section-title">
@@ -510,7 +606,7 @@ JEONIN HIGH SCHOOL
 
 
 <!-- =====================
-     3. 시험 선택
+     4. 시험 선택
 ===================== -->
 
 <section
@@ -526,7 +622,10 @@ JEONIN HIGH SCHOOL
 </button>
 
 
-<div class="breadcrumb" id="examBreadcrumb"></div>
+<div
+    class="breadcrumb"
+    id="examBreadcrumb"
+></div>
 
 
 <div class="section-title">
@@ -584,7 +683,7 @@ JEONIN HIGH SCHOOL
 
 
 <!-- =====================
-     4. 과목 선택
+     5. 과목
 ===================== -->
 
 <section
@@ -600,7 +699,10 @@ JEONIN HIGH SCHOOL
 </button>
 
 
-<div class="breadcrumb" id="subjectBreadcrumb"></div>
+<div
+    class="breadcrumb"
+    id="subjectBreadcrumb"
+></div>
 
 
 <div class="section-title">
@@ -622,7 +724,7 @@ JEONIN HIGH SCHOOL
 >
 
 
-<!-- 테스트용 -->
+<!-- 테스트 자료 -->
 
 <div class="subject-card">
 
@@ -702,10 +804,12 @@ JEONIN HIGH SCHOOL
 
 
 /* =====================
-   현재 선택 상태
+   선택 상태
 ===================== */
 
 let selectedGrade = "";
+
+let selectedYear = "";
 
 let selectedSemester = "";
 
@@ -714,12 +818,15 @@ let selectedExam = "";
 
 
 /* =====================
-   화면 숨기기
+   모든 화면 숨기기
 ===================== */
 
 function hideAllScreens() {
 
     document.getElementById("gradeScreen")
+        .style.display = "none";
+
+    document.getElementById("yearScreen")
         .style.display = "none";
 
     document.getElementById("semesterScreen")
@@ -745,11 +852,34 @@ function selectGrade(grade) {
 
     hideAllScreens();
 
+    document.getElementById("yearScreen")
+        .style.display = "block";
+
+    document.getElementById("yearBreadcrumb")
+        .textContent = grade;
+
+}
+
+
+
+/* =====================
+   연도 선택
+===================== */
+
+function selectYear(year) {
+
+    selectedYear = year;
+
+    hideAllScreens();
+
     document.getElementById("semesterScreen")
         .style.display = "block";
 
     document.getElementById("semesterBreadcrumb")
-        .textContent = grade;
+        .textContent =
+            selectedGrade
+            + " · "
+            + selectedYear;
 
 }
 
@@ -771,6 +901,8 @@ function selectSemester(semester) {
     document.getElementById("examBreadcrumb")
         .textContent =
             selectedGrade
+            + " · "
+            + selectedYear
             + " · "
             + selectedSemester;
 
@@ -795,6 +927,8 @@ function selectExam(exam) {
         .textContent =
             selectedGrade
             + " · "
+            + selectedYear
+            + " · "
             + selectedSemester
             + " · "
             + selectedExam;
@@ -815,6 +949,14 @@ function goBack(screen) {
     if (screen === "grade") {
 
         document.getElementById("gradeScreen")
+            .style.display = "block";
+
+    }
+
+
+    if (screen === "year") {
+
+        document.getElementById("yearScreen")
             .style.display = "block";
 
     }
