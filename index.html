@@ -3,271 +3,379 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>전인고 시험 족보</title>
+    <title>전인고 시험 족보</title>
 
 
-<style>
+    <style>
 
-* {
-    box-sizing: border-box;
-}
+        * {
+            box-sizing: border-box;
+        }
 
 
-body {
+        body {
+            margin: 0;
 
-    margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Apple SD Gothic Neo",
+                "Noto Sans KR",
+                sans-serif;
 
-    font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Apple SD Gothic Neo",
-    "Noto Sans KR",
-    sans-serif;
+            background: #f7f7f5;
 
-    background: #f7f7f5;
+            color: #171717;
+        }
 
-    color: #171717;
 
-}
+        .container {
+            width: 90%;
 
+            max-width: 1100px;
 
-.container {
+            margin: 0 auto;
+        }
 
-    width: 90%;
 
-    max-width: 1100px;
+        /* =====================
+           HEADER
+        ===================== */
 
-    margin: auto;
+        header {
+            background: #171717;
 
-}
+            color: white;
 
+            padding: 70px 0 65px;
+        }
 
-/* 상단 */
 
-header {
+        .logo {
+            font-size: 13px;
 
-    background: #171717;
+            letter-spacing: 2px;
 
-    color: white;
+            color: #999;
 
-    padding: 70px 0 60px;
+            margin-bottom: 20px;
+        }
 
-}
 
+        header h1 {
+            font-size: 48px;
 
-.logo {
+            letter-spacing: -2px;
 
-    font-size: 13px;
+            margin: 0 0 15px;
+        }
 
-    letter-spacing: 2px;
 
-    color: #aaa;
+        header p {
+            color: #ccc;
 
-    margin-bottom: 20px;
+            margin: 0 0 35px;
+        }
 
-}
 
+        /* 검색창 */
 
-h1 {
+        .search-box {
+            background: white;
 
-    font-size: 48px;
+            max-width: 700px;
 
-    margin: 0 0 15px;
+            border-radius: 14px;
 
-}
+            padding: 16px 20px;
+        }
 
 
-header p {
+        .search-box input {
+            width: 100%;
 
-    color: #ccc;
+            border: none;
 
-    margin-bottom: 35px;
+            outline: none;
 
-}
+            font-size: 16px;
 
+            color: #222;
+        }
 
-/* 검색 */
 
-.search-box {
+        /* =====================
+           MAIN
+        ===================== */
 
-    background: white;
+        main {
+            padding: 60px 0 100px;
+        }
 
-    border-radius: 14px;
 
-    padding: 16px 20px;
+        .section-title {
+            margin-bottom: 25px;
+        }
 
-    max-width: 700px;
 
-}
+        .section-title h2 {
+            margin: 0 0 8px;
 
+            font-size: 26px;
+        }
 
-.search-box input {
 
-    width: 100%;
+        .section-title p {
+            margin: 0;
 
-    border: none;
+            color: #777;
+        }
 
-    outline: none;
 
-    font-size: 16px;
+        /* =====================
+           시험 종류 카드
+        ===================== */
 
-}
+        .exam-types {
 
+            display: grid;
 
-/* 본문 */
+            grid-template-columns:
+                repeat(2, 1fr);
 
-main {
+            gap: 18px;
 
-    padding: 50px 0 80px;
+            margin-bottom: 70px;
+        }
 
-}
 
+        .exam-type {
 
-/* 버튼 */
+            background: white;
 
-.grade-buttons {
+            border: 1px solid #e5e5e5;
 
-    display: flex;
+            border-radius: 18px;
 
-    gap: 10px;
+            padding: 28px;
 
-    margin-bottom: 50px;
+            cursor: pointer;
 
-    flex-wrap: wrap;
+            transition: 0.2s;
+        }
 
-}
 
+        .exam-type:hover {
 
-.grade-buttons button {
+            transform: translateY(-3px);
 
-    padding: 11px 20px;
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,0.07);
+        }
 
-    border: 1px solid #ddd;
 
-    border-radius: 30px;
+        .exam-year {
 
-    background: white;
+            color: #888;
 
-    cursor: pointer;
+            font-size: 13px;
 
-}
+            margin-bottom: 10px;
+        }
 
 
-.grade-buttons button:hover {
+        .exam-type h3 {
 
-    background: #171717;
+            margin: 0 0 8px;
 
-    color: white;
+            font-size: 21px;
+        }
 
-}
 
+        .exam-type p {
 
-/* 카드 */
+            margin: 0;
 
-.exam-list {
+            color: #777;
 
-    display: grid;
+            font-size: 14px;
+        }
 
-    grid-template-columns:
-    repeat(2, 1fr);
 
-    gap: 18px;
+        /* =====================
+           최근 자료
+        ===================== */
 
-}
+        .recent-list {
 
+            display: grid;
 
-.exam-card {
+            grid-template-columns:
+                repeat(3, 1fr);
 
-    background: white;
+            gap: 15px;
+        }
 
-    border: 1px solid #e5e5e5;
 
-    border-radius: 18px;
+        .recent-item {
 
-    padding: 25px;
+            background: white;
 
-}
+            border: 1px solid #e5e5e5;
 
+            border-radius: 14px;
 
-.exam-info {
+            padding: 20px;
+        }
 
-    color: #777;
 
-    font-size: 13px;
+        .recent-item .info {
 
-    margin-bottom: 10px;
+            font-size: 12px;
 
-}
+            color: #888;
 
+            margin-bottom: 8px;
+        }
 
-.exam-card h3 {
 
-    margin: 0 0 20px;
+        .recent-item h3 {
 
-}
+            margin: 0;
 
+            font-size: 17px;
+        }
 
-.file-buttons {
 
-    display: flex;
+        /* =====================
+           학년 선택 화면
+        ===================== */
 
-    gap: 8px;
+        .grade-screen {
 
-}
+            display: none;
 
+            margin-top: 30px;
+        }
 
-.file-buttons a {
 
-    text-decoration: none;
+        .back-button {
 
-    color: #222;
+            border: none;
 
-    background: #f3f3f3;
+            background: none;
 
-    padding: 9px 12px;
+            padding: 0;
 
-    border-radius: 9px;
+            margin-bottom: 25px;
 
-    font-size: 13px;
+            color: #666;
 
-}
+            cursor: pointer;
 
+            font-size: 14px;
+        }
 
-footer {
 
-    padding: 25px 0;
+        .back-button:hover {
+            color: #111;
+        }
 
-    background: white;
 
-    color: #888;
+        .grades {
 
-}
+            display: grid;
 
+            grid-template-columns:
+                repeat(3, 1fr);
 
-@media (max-width: 700px) {
+            gap: 15px;
+        }
 
-    .exam-list {
 
-        grid-template-columns: 1fr;
+        .grade {
 
-    }
+            background: white;
 
-    h1 {
+            border: 1px solid #e5e5e5;
 
-        font-size: 38px;
+            border-radius: 16px;
 
-    }
+            padding: 30px;
 
-}
+            text-align: center;
 
-</style>
+            font-size: 20px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .grade:hover {
+
+            background: #171717;
+
+            color: white;
+        }
+
+
+        /* =====================
+           푸터
+        ===================== */
+
+        footer {
+
+            background: white;
+
+            border-top: 1px solid #e5e5e5;
+
+            padding: 25px 0;
+
+            color: #888;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================
+           모바일
+        ===================== */
+
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 38px;
+            }
+
+
+            .exam-types {
+                grid-template-columns: 1fr;
+            }
+
+
+            .recent-list {
+                grid-template-columns: 1fr;
+            }
+
+
+            .grades {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
 
 </head>
+
 
 
 <body>
@@ -275,92 +383,299 @@ footer {
 
 <header>
 
-<div class="container">
+    <div class="container">
 
-<div class="logo">
-JEONIN HIGH SCHOOL
-</div>
-
-
-<h1>
-전인고 시험 족보
-</h1>
+        <div class="logo">
+            JEONIN HIGH SCHOOL
+        </div>
 
 
-<p>
-전인고 학생들을 위한 시험 자료 아카이브
-</p>
+        <h1>
+            전인고 시험 족보
+        </h1>
 
 
-<div class="search-box">
+        <p>
+            전인고 학생들을 위한 시험 자료 아카이브
+        </p>
 
-<input
-id="searchInput"
-type="text"
-placeholder="시험, 과목, 연도 등을 검색해 보세요"
->
 
-</div>
+        <div class="search-box">
 
-</div>
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="시험, 과목, 연도 등을 검색해 보세요"
+            >
+
+        </div>
+
+    </div>
 
 </header>
 
 
+
 <main>
 
-<div class="container">
+    <div class="container">
 
 
-<div class="grade-buttons">
+        <!-- ==================
+             시험 자료
+        =================== -->
 
-<button onclick="filterGrade('전체')">
-전체
-</button>
-
-<button onclick="filterGrade('1학년')">
-1학년
-</button>
-
-<button onclick="filterGrade('2학년')">
-2학년
-</button>
-
-<button onclick="filterGrade('3학년')">
-3학년
-</button>
-
-</div>
+        <section id="homeScreen">
 
 
-<h2>
-시험 자료
-</h2>
+            <div class="section-title">
+
+                <h2>
+                    시험 자료
+                </h2>
+
+                <p>
+                    원하는 시험을 선택하세요.
+                </p>
+
+            </div>
 
 
-<p id="resultText">
-등록된 시험 자료입니다.
-</p>
+            <div class="exam-types">
 
 
-<div
-id="examList"
-class="exam-list">
-</div>
+                <!-- 2026 중간 -->
+
+                <div
+                    class="exam-type"
+                    onclick="showGrades('2026학년도 1학기 중간고사')"
+                >
+
+                    <div class="exam-year">
+                        2026학년도
+                    </div>
+
+                    <h3>
+                        1학기 중간고사
+                    </h3>
+
+                    <p>
+                        학년을 선택하여 시험 자료를 확인하세요.
+                    </p>
+
+                </div>
 
 
-</div>
+
+                <!-- 2026 기말 -->
+
+                <div
+                    class="exam-type"
+                    onclick="showGrades('2026학년도 1학기 기말고사')"
+                >
+
+                    <div class="exam-year">
+                        2026학년도
+                    </div>
+
+                    <h3>
+                        1학기 기말고사
+                    </h3>
+
+                    <p>
+                        학년을 선택하여 시험 자료를 확인하세요.
+                    </p>
+
+                </div>
+
+
+
+                <!-- 2025 중간 -->
+
+                <div
+                    class="exam-type"
+                    onclick="showGrades('2025학년도 1학기 중간고사')"
+                >
+
+                    <div class="exam-year">
+                        2025학년도
+                    </div>
+
+                    <h3>
+                        1학기 중간고사
+                    </h3>
+
+                    <p>
+                        학년을 선택하여 시험 자료를 확인하세요.
+                    </p>
+
+                </div>
+
+
+
+                <!-- 2025 기말 -->
+
+                <div
+                    class="exam-type"
+                    onclick="showGrades('2025학년도 2학기 기말고사')"
+                >
+
+                    <div class="exam-year">
+                        2025학년도
+                    </div>
+
+                    <h3>
+                        2학기 기말고사
+                    </h3>
+
+                    <p>
+                        학년을 선택하여 시험 자료를 확인하세요.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 최근 자료 -->
+
+            <div class="section-title">
+
+                <h2>
+                    최근 등록된 자료
+                </h2>
+
+                <p>
+                    최근 추가된 시험 자료입니다.
+                </p>
+
+            </div>
+
+
+            <div class="recent-list">
+
+
+                <div class="recent-item">
+
+                    <div class="info">
+                        2026학년도 · 3학년 · 1학기 중간고사
+                    </div>
+
+                    <h3>
+                        수학
+                    </h3>
+
+                </div>
+
+
+                <div class="recent-item">
+
+                    <div class="info">
+                        2026학년도 · 2학년 · 1학기 중간고사
+                    </div>
+
+                    <h3>
+                        영어
+                    </h3>
+
+                </div>
+
+
+                <div class="recent-item">
+
+                    <div class="info">
+                        2026학년도 · 1학년 · 1학기 중간고사
+                    </div>
+
+                    <h3>
+                        국어
+                    </h3>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================
+             학년 선택
+        =================== -->
+
+        <section
+            id="gradeScreen"
+            class="grade-screen"
+        >
+
+            <button
+                class="back-button"
+                onclick="goHome()"
+            >
+                ← 시험 목록으로 돌아가기
+            </button>
+
+
+            <div class="section-title">
+
+                <h2 id="selectedExam">
+                    시험
+                </h2>
+
+                <p>
+                    학년을 선택하세요.
+                </p>
+
+            </div>
+
+
+            <div class="grades">
+
+
+                <div
+                    class="grade"
+                    onclick="openGrade('1학년')"
+                >
+                    1학년
+                </div>
+
+
+                <div
+                    class="grade"
+                    onclick="openGrade('2학년')"
+                >
+                    2학년
+                </div>
+
+
+                <div
+                    class="grade"
+                    onclick="openGrade('3학년')"
+                >
+                    3학년
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </div>
 
 </main>
 
 
+
 <footer>
 
-<div class="container">
+    <div class="container">
 
-전인고 시험 족보
+        전인고 시험 족보
 
-</div>
+    </div>
 
 </footer>
 
@@ -369,178 +684,81 @@ class="exam-list">
 <script>
 
 
-const exams = [
+/* =========================
+   시험 선택
+========================= */
 
-{
+function showGrades(examName) {
 
-grade: "3학년",
-
-year: "2026",
-
-term: "1학기 중간고사",
-
-subject: "국어"
-
-},
+    document
+        .getElementById("homeScreen")
+        .style.display = "none";
 
 
-{
-
-grade: "2학년",
-
-year: "2026",
-
-term: "1학기 중간고사",
-
-subject: "영어"
-
-},
+    document
+        .getElementById("gradeScreen")
+        .style.display = "block";
 
 
-{
-
-grade: "1학년",
-
-year: "2026",
-
-term: "1학기 중간고사",
-
-subject: "수학"
+    document
+        .getElementById("selectedExam")
+        .textContent = examName;
 
 }
 
-];
 
 
-let selectedGrade = "전체";
+/* =========================
+   홈으로 돌아가기
+========================= */
 
-let searchText = "";
+function goHome() {
 
-
-function showExams() {
-
-
-const examList =
-document.getElementById("examList");
-
-
-examList.innerHTML = "";
+    document
+        .getElementById("gradeScreen")
+        .style.display = "none";
 
 
-const filtered =
-exams.filter(function(exam) {
-
-
-const gradeMatch =
-selectedGrade === "전체"
-||
-exam.grade === selectedGrade;
-
-
-const text =
-exam.grade
-+
-exam.year
-+
-exam.term
-+
-exam.subject;
-
-
-const searchMatch =
-text.toLowerCase()
-.includes(
-searchText.toLowerCase()
-);
-
-
-return gradeMatch && searchMatch;
-
-});
-
-
-filtered.forEach(function(exam) {
-
-
-const card =
-document.createElement("div");
-
-
-card.className =
-"exam-card";
-
-
-card.innerHTML = `
-
-<div class="exam-info">
-
-${exam.year}학년도 ·
-${exam.grade} ·
-${exam.term}
-
-</div>
-
-
-<h3>
-
-${exam.subject}
-
-</h3>
-
-
-<div class="file-buttons">
-
-<a href="./files/june_math.pdf" target="_blank">
-    시험지
-</a>
-
-<a href="#">
-정답
-</a>
-
-<a href="#">
-해설
-</a>
-
-</div>
-
-`;
-
-
-examList.appendChild(card);
-
-
-});
-
+    document
+        .getElementById("homeScreen")
+        .style.display = "block";
 
 }
 
 
-function filterGrade(grade) {
 
-selectedGrade = grade;
+/* =========================
+   학년 선택
+========================= */
 
-showExams();
+function openGrade(grade) {
+
+    alert(
+        grade +
+        " 시험 자료 페이지는 다음 단계에서 만들 예정입니다."
+    );
 
 }
 
+
+
+/* =========================
+   검색
+========================= */
 
 document
-.getElementById("searchInput")
-.addEventListener(
-"input",
-function() {
+    .getElementById("searchInput")
+    .addEventListener(
+        "input",
+        function() {
 
-searchText = this.value;
+            console.log(
+                "검색:",
+                this.value
+            );
 
-showExams();
-
-}
-);
-
-
-showExams();
-
+        }
+    );
 
 </script>
 
