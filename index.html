@@ -4,18 +4,19 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>전인고 시험 족보</title>
 
-    <!-- 디자인 파일 연결 -->
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
+
     <!-- 상단 -->
+
     <header>
 
         <div class="container">
@@ -24,18 +25,23 @@
                 JEONIN HIGH SCHOOL
             </div>
 
+
             <h1>
                 전인고 시험 족보
             </h1>
+
 
             <p>
                 전인고 학생들을 위한 시험 자료 아카이브
             </p>
 
-            <!-- 검색 -->
+
+            <!-- 검색창 -->
+
             <div class="search-box">
 
                 <input
+                    id="searchInput"
                     type="text"
                     placeholder="시험, 과목, 연도 등을 검색해 보세요"
                 >
@@ -47,32 +53,36 @@
     </header>
 
 
+
     <!-- 본문 -->
+
     <main>
 
         <div class="container">
 
-            <!-- 학년 선택 -->
+
+            <!-- 학년 버튼 -->
 
             <div class="grade-buttons">
 
-                <button>
+                <button data-grade="전체">
                     전체
                 </button>
 
-                <button>
+                <button data-grade="1학년">
                     1학년
                 </button>
 
-                <button>
+                <button data-grade="2학년">
                     2학년
                 </button>
 
-                <button>
+                <button data-grade="3학년">
                     3학년
                 </button>
 
             </div>
+
 
 
             <!-- 시험 자료 -->
@@ -80,109 +90,29 @@
             <div class="section-title">
 
                 <h2>
-                    최근 시험 자료
+                    시험 자료
                 </h2>
 
-                <p>
-                    현재 등록된 시험 자료입니다.
+                <p id="resultText">
+                    등록된 시험 자료입니다.
                 </p>
 
             </div>
 
 
-            <div class="exam-list">
 
+            <!-- 시험 카드가 들어가는 곳 -->
 
-                <!-- 시험 1 -->
+            <div
+                class="exam-list"
+                id="examList"
+            ></div>
 
-                <div class="exam-card">
-
-                    <div class="exam-info">
-                        2026학년도 · 3학년 · 1학기 중간고사
-                    </div>
-
-                    <h3>
-                        국어
-                    </h3>
-
-                    <div class="file-buttons">
-
-                        <a href="#">
-                            시험지
-                        </a>
-
-                        <a href="#">
-                            정답
-                        </a>
-
-                        <a href="#">
-                            해설
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- 시험 2 -->
-
-                <div class="exam-card">
-
-                    <div class="exam-info">
-                        2026학년도 · 2학년 · 1학기 중간고사
-                    </div>
-
-                    <h3>
-                        영어
-                    </h3>
-
-                    <div class="file-buttons">
-
-                        <a href="#">
-                            시험지
-                        </a>
-
-                        <a href="#">
-                            정답
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- 시험 3 -->
-
-                <div class="exam-card">
-
-                    <div class="exam-info">
-                        2026학년도 · 1학년 · 1학기 중간고사
-                    </div>
-
-                    <h3>
-                        수학
-                    </h3>
-
-                    <div class="file-buttons">
-
-                        <a href="#">
-                            시험지
-                        </a>
-
-                        <a href="#">
-                            정답
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-            </div>
 
         </div>
 
     </main>
+
 
 
     <!-- 하단 -->
@@ -197,8 +127,13 @@
 
     </footer>
 
-<script src="app.js"></script>
-    
+
+
+    <!-- JavaScript -->
+
+    <script src="app.js"></script>
+
+
 </body>
 
 </html>
