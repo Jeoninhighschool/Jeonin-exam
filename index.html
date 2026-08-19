@@ -3,379 +3,320 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>전인고 시험 족보</title>
+<title>전인고 시험 족보</title>
 
+<style>
 
-    <style>
+* {
+    box-sizing: border-box;
+}
 
-        * {
-            box-sizing: border-box;
-        }
+body {
+    margin: 0;
 
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Apple SD Gothic Neo",
+        "Noto Sans KR",
+        sans-serif;
 
-        body {
-            margin: 0;
+    background: #f7f7f5;
 
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Apple SD Gothic Neo",
-                "Noto Sans KR",
-                sans-serif;
+    color: #171717;
+}
 
-            background: #f7f7f5;
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-            color: #171717;
-        }
 
+/* =====================
+   HEADER
+===================== */
 
-        .container {
-            width: 90%;
+header {
+    background: #171717;
+    color: white;
 
-            max-width: 1100px;
+    padding: 65px 0;
+}
 
-            margin: 0 auto;
-        }
+.logo {
+    font-size: 13px;
 
+    letter-spacing: 2px;
 
-        /* =====================
-           HEADER
-        ===================== */
+    color: #999;
 
-        header {
-            background: #171717;
+    margin-bottom: 20px;
+}
 
-            color: white;
+header h1 {
+    margin: 0 0 15px;
 
-            padding: 70px 0 65px;
-        }
+    font-size: 48px;
 
+    letter-spacing: -2px;
+}
 
-        .logo {
-            font-size: 13px;
+header p {
+    margin: 0 0 35px;
 
-            letter-spacing: 2px;
+    color: #ccc;
+}
 
-            color: #999;
 
-            margin-bottom: 20px;
-        }
+/* 검색 */
 
+.search-box {
+    background: white;
 
-        header h1 {
-            font-size: 48px;
+    max-width: 700px;
 
-            letter-spacing: -2px;
+    border-radius: 14px;
 
-            margin: 0 0 15px;
-        }
+    padding: 16px 20px;
+}
 
+.search-box input {
+    width: 100%;
 
-        header p {
-            color: #ccc;
+    border: none;
 
-            margin: 0 0 35px;
-        }
+    outline: none;
 
+    font-size: 16px;
 
-        /* 검색창 */
+    color: #222;
+}
 
-        .search-box {
-            background: white;
 
-            max-width: 700px;
+/* =====================
+   MAIN
+===================== */
 
-            border-radius: 14px;
+main {
+    padding: 60px 0 100px;
+}
 
-            padding: 16px 20px;
-        }
 
+/* 상단 경로 */
 
-        .search-box input {
-            width: 100%;
+.breadcrumb {
+    color: #888;
 
-            border: none;
+    font-size: 14px;
 
-            outline: none;
+    margin-bottom: 20px;
+}
 
-            font-size: 16px;
 
-            color: #222;
-        }
+/* 제목 */
 
+.section-title {
+    margin-bottom: 30px;
+}
 
-        /* =====================
-           MAIN
-        ===================== */
+.section-title h2 {
+    margin: 0 0 8px;
 
-        main {
-            padding: 60px 0 100px;
-        }
+    font-size: 28px;
+}
 
+.section-title p {
+    margin: 0;
 
-        .section-title {
-            margin-bottom: 25px;
-        }
+    color: #777;
+}
 
 
-        .section-title h2 {
-            margin: 0 0 8px;
+/* =====================
+   선택 카드
+===================== */
 
-            font-size: 26px;
-        }
+.selection-grid {
+    display: grid;
 
+    grid-template-columns:
+        repeat(3, 1fr);
 
-        .section-title p {
-            margin: 0;
+    gap: 18px;
+}
 
-            color: #777;
-        }
+.selection-card {
+    background: white;
 
+    border: 1px solid #e5e5e5;
 
-        /* =====================
-           시험 종류 카드
-        ===================== */
+    border-radius: 18px;
 
-        .exam-types {
+    padding: 35px 25px;
 
-            display: grid;
+    text-align: center;
 
-            grid-template-columns:
-                repeat(2, 1fr);
+    cursor: pointer;
 
-            gap: 18px;
+    transition: 0.2s;
+}
 
-            margin-bottom: 70px;
-        }
+.selection-card:hover {
+    transform: translateY(-3px);
 
+    background: #171717;
 
-        .exam-type {
+    color: white;
 
-            background: white;
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.08);
+}
 
-            border: 1px solid #e5e5e5;
+.selection-card h3 {
+    margin: 0 0 10px;
 
-            border-radius: 18px;
+    font-size: 22px;
+}
 
-            padding: 28px;
+.selection-card p {
+    margin: 0;
 
-            cursor: pointer;
+    color: #888;
 
-            transition: 0.2s;
-        }
+    font-size: 14px;
+}
 
+.selection-card:hover p {
+    color: #bbb;
+}
 
-        .exam-type:hover {
 
-            transform: translateY(-3px);
+/* =====================
+   과목 목록
+===================== */
 
-            box-shadow:
-                0 10px 30px
-                rgba(0,0,0,0.07);
-        }
+.subject-list {
+    display: grid;
 
+    grid-template-columns:
+        repeat(2, 1fr);
 
-        .exam-year {
+    gap: 15px;
+}
 
-            color: #888;
+.subject-card {
+    background: white;
 
-            font-size: 13px;
+    border: 1px solid #e5e5e5;
 
-            margin-bottom: 10px;
-        }
+    border-radius: 16px;
 
+    padding: 22px;
 
-        .exam-type h3 {
+    display: flex;
 
-            margin: 0 0 8px;
+    justify-content: space-between;
 
-            font-size: 21px;
-        }
+    align-items: center;
+}
 
+.subject-name {
+    font-size: 18px;
 
-        .exam-type p {
+    font-weight: 600;
+}
 
-            margin: 0;
+.subject-button {
+    display: inline-block;
 
-            color: #777;
+    padding: 9px 14px;
 
-            font-size: 14px;
-        }
+    border-radius: 9px;
 
+    background: #171717;
 
-        /* =====================
-           최근 자료
-        ===================== */
+    color: white;
 
-        .recent-list {
+    text-decoration: none;
 
-            display: grid;
+    font-size: 13px;
+}
 
-            grid-template-columns:
-                repeat(3, 1fr);
+.subject-button:hover {
+    opacity: 0.8;
+}
 
-            gap: 15px;
-        }
 
+/* =====================
+   뒤로가기
+===================== */
 
-        .recent-item {
+.back-button {
+    border: none;
 
-            background: white;
+    background: none;
 
-            border: 1px solid #e5e5e5;
+    padding: 0;
 
-            border-radius: 14px;
+    margin-bottom: 25px;
 
-            padding: 20px;
-        }
+    color: #666;
 
+    cursor: pointer;
 
-        .recent-item .info {
+    font-size: 14px;
+}
 
-            font-size: 12px;
+.back-button:hover {
+    color: #111;
+}
 
-            color: #888;
 
-            margin-bottom: 8px;
-        }
+/* =====================
+   FOOTER
+===================== */
 
+footer {
+    background: white;
 
-        .recent-item h3 {
+    border-top: 1px solid #e5e5e5;
 
-            margin: 0;
+    padding: 25px 0;
 
-            font-size: 17px;
-        }
+    color: #888;
 
+    font-size: 13px;
+}
 
-        /* =====================
-           학년 선택 화면
-        ===================== */
 
-        .grade-screen {
+/* =====================
+   모바일
+===================== */
 
-            display: none;
+@media (max-width: 700px) {
 
-            margin-top: 30px;
-        }
+    header h1 {
+        font-size: 38px;
+    }
 
+    .selection-grid {
+        grid-template-columns: 1fr;
+    }
 
-        .back-button {
+    .subject-list {
+        grid-template-columns: 1fr;
+    }
 
-            border: none;
+}
 
-            background: none;
-
-            padding: 0;
-
-            margin-bottom: 25px;
-
-            color: #666;
-
-            cursor: pointer;
-
-            font-size: 14px;
-        }
-
-
-        .back-button:hover {
-            color: #111;
-        }
-
-
-        .grades {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 15px;
-        }
-
-
-        .grade {
-
-            background: white;
-
-            border: 1px solid #e5e5e5;
-
-            border-radius: 16px;
-
-            padding: 30px;
-
-            text-align: center;
-
-            font-size: 20px;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-        }
-
-
-        .grade:hover {
-
-            background: #171717;
-
-            color: white;
-        }
-
-
-        /* =====================
-           푸터
-        ===================== */
-
-        footer {
-
-            background: white;
-
-            border-top: 1px solid #e5e5e5;
-
-            padding: 25px 0;
-
-            color: #888;
-
-            font-size: 13px;
-        }
-
-
-        /* =====================
-           모바일
-        ===================== */
-
-        @media (max-width: 700px) {
-
-            header h1 {
-                font-size: 38px;
-            }
-
-
-            .exam-types {
-                grid-template-columns: 1fr;
-            }
-
-
-            .recent-list {
-                grid-template-columns: 1fr;
-            }
-
-
-            .grades {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
-
 
 
 <body>
@@ -383,34 +324,31 @@
 
 <header>
 
-    <div class="container">
+<div class="container">
 
-        <div class="logo">
-            JEONIN HIGH SCHOOL
-        </div>
+<div class="logo">
+JEONIN HIGH SCHOOL
+</div>
 
+<h1>
+전인고 시험 족보
+</h1>
 
-        <h1>
-            전인고 시험 족보
-        </h1>
+<p>
+전인고 학생들을 위한 시험 자료 아카이브
+</p>
 
+<div class="search-box">
 
-        <p>
-            전인고 학생들을 위한 시험 자료 아카이브
-        </p>
+<input
+    id="searchInput"
+    type="text"
+    placeholder="시험, 과목, 연도 등을 검색해 보세요"
+>
 
+</div>
 
-        <div class="search-box">
-
-            <input
-                id="searchInput"
-                type="text"
-                placeholder="시험, 과목, 연도 등을 검색해 보세요"
-            >
-
-        </div>
-
-    </div>
+</div>
 
 </header>
 
@@ -418,252 +356,331 @@
 
 <main>
 
-    <div class="container">
+<div class="container">
 
 
-        <!-- ==================
-             시험 자료
-        =================== -->
+<!-- =====================
+     1. 학년 선택
+===================== -->
 
-        <section id="homeScreen">
+<section id="gradeScreen">
 
+<div class="section-title">
 
-            <div class="section-title">
+<h2>
+학년을 선택하세요
+</h2>
 
-                <h2>
-                    시험 자료
-                </h2>
+<p>
+찾고 싶은 시험의 학년을 선택해주세요.
+</p>
 
-                <p>
-                    원하는 시험을 선택하세요.
-                </p>
+</div>
 
-            </div>
 
+<div class="selection-grid">
 
-            <div class="exam-types">
 
+<div
+    class="selection-card"
+    onclick="selectGrade('1학년')"
+>
 
-                <!-- 2026 중간 -->
+<h3>
+1학년
+</h3>
 
-                <div
-                    class="exam-type"
-                    onclick="showGrades('2026학년도 1학기 중간고사')"
-                >
+<p>
+1학년 시험 자료
+</p>
 
-                    <div class="exam-year">
-                        2026학년도
-                    </div>
+</div>
 
-                    <h3>
-                        1학기 중간고사
-                    </h3>
 
-                    <p>
-                        학년을 선택하여 시험 자료를 확인하세요.
-                    </p>
+<div
+    class="selection-card"
+    onclick="selectGrade('2학년')"
+>
 
-                </div>
+<h3>
+2학년
+</h3>
 
+<p>
+2학년 시험 자료
+</p>
 
+</div>
 
-                <!-- 2026 기말 -->
 
-                <div
-                    class="exam-type"
-                    onclick="showGrades('2026학년도 1학기 기말고사')"
-                >
+<div
+    class="selection-card"
+    onclick="selectGrade('3학년')"
+>
 
-                    <div class="exam-year">
-                        2026학년도
-                    </div>
+<h3>
+3학년
+</h3>
 
-                    <h3>
-                        1학기 기말고사
-                    </h3>
+<p>
+3학년 시험 자료
+</p>
 
-                    <p>
-                        학년을 선택하여 시험 자료를 확인하세요.
-                    </p>
+</div>
 
-                </div>
 
+</div>
 
+</section>
 
-                <!-- 2025 중간 -->
 
-                <div
-                    class="exam-type"
-                    onclick="showGrades('2025학년도 1학기 중간고사')"
-                >
 
-                    <div class="exam-year">
-                        2025학년도
-                    </div>
+<!-- =====================
+     2. 학기 선택
+===================== -->
 
-                    <h3>
-                        1학기 중간고사
-                    </h3>
+<section
+    id="semesterScreen"
+    style="display:none;"
+>
 
-                    <p>
-                        학년을 선택하여 시험 자료를 확인하세요.
-                    </p>
+<button
+    class="back-button"
+    onclick="goBack('grade')"
+>
+← 학년 선택으로
+</button>
 
-                </div>
 
+<div class="breadcrumb" id="semesterBreadcrumb"></div>
 
 
-                <!-- 2025 기말 -->
+<div class="section-title">
 
-                <div
-                    class="exam-type"
-                    onclick="showGrades('2025학년도 2학기 기말고사')"
-                >
+<h2>
+학기를 선택하세요
+</h2>
 
-                    <div class="exam-year">
-                        2025학년도
-                    </div>
+<p>
+시험이 진행된 학기를 선택해주세요.
+</p>
 
-                    <h3>
-                        2학기 기말고사
-                    </h3>
+</div>
 
-                    <p>
-                        학년을 선택하여 시험 자료를 확인하세요.
-                    </p>
 
-                </div>
+<div class="selection-grid">
 
-            </div>
 
+<div
+    class="selection-card"
+    onclick="selectSemester('1학기')"
+>
 
+<h3>
+1학기
+</h3>
 
-            <!-- 최근 자료 -->
+<p>
+1학기 시험 자료
+</p>
 
-            <div class="section-title">
+</div>
 
-                <h2>
-                    최근 등록된 자료
-                </h2>
 
-                <p>
-                    최근 추가된 시험 자료입니다.
-                </p>
+<div
+    class="selection-card"
+    onclick="selectSemester('2학기')"
+>
 
-            </div>
+<h3>
+2학기
+</h3>
 
+<p>
+2학기 시험 자료
+</p>
 
-            <div class="recent-list">
+</div>
 
 
-                <div class="recent-item">
+</div>
 
-                    <div class="info">
-                        2026학년도 · 3학년 · 1학기 중간고사
-                    </div>
+</section>
 
-                    <h3>
-                        수학
-                    </h3>
 
-                </div>
 
+<!-- =====================
+     3. 시험 선택
+===================== -->
 
-                <div class="recent-item">
+<section
+    id="examScreen"
+    style="display:none;"
+>
 
-                    <div class="info">
-                        2026학년도 · 2학년 · 1학기 중간고사
-                    </div>
+<button
+    class="back-button"
+    onclick="goBack('semester')"
+>
+← 학기 선택으로
+</button>
 
-                    <h3>
-                        영어
-                    </h3>
 
-                </div>
+<div class="breadcrumb" id="examBreadcrumb"></div>
 
 
-                <div class="recent-item">
+<div class="section-title">
 
-                    <div class="info">
-                        2026학년도 · 1학년 · 1학기 중간고사
-                    </div>
+<h2>
+시험을 선택하세요
+</h2>
 
-                    <h3>
-                        국어
-                    </h3>
+<p>
+중간고사 또는 기말고사를 선택해주세요.
+</p>
 
-                </div>
+</div>
 
 
-            </div>
+<div class="selection-grid">
 
-        </section>
 
+<div
+    class="selection-card"
+    onclick="selectExam('중간고사')"
+>
 
+<h3>
+중간고사
+</h3>
 
-        <!-- ==================
-             학년 선택
-        =================== -->
+<p>
+학기 중간 시험
+</p>
 
-        <section
-            id="gradeScreen"
-            class="grade-screen"
-        >
+</div>
 
-            <button
-                class="back-button"
-                onclick="goHome()"
-            >
-                ← 시험 목록으로 돌아가기
-            </button>
 
+<div
+    class="selection-card"
+    onclick="selectExam('기말고사')"
+>
 
-            <div class="section-title">
+<h3>
+기말고사
+</h3>
 
-                <h2 id="selectedExam">
-                    시험
-                </h2>
+<p>
+학기 기말 시험
+</p>
 
-                <p>
-                    학년을 선택하세요.
-                </p>
+</div>
 
-            </div>
 
+</div>
 
-            <div class="grades">
+</section>
 
 
-                <div
-                    class="grade"
-                    onclick="openGrade('1학년')"
-                >
-                    1학년
-                </div>
 
+<!-- =====================
+     4. 과목 선택
+===================== -->
 
-                <div
-                    class="grade"
-                    onclick="openGrade('2학년')"
-                >
-                    2학년
-                </div>
+<section
+    id="subjectScreen"
+    style="display:none;"
+>
 
+<button
+    class="back-button"
+    onclick="goBack('exam')"
+>
+← 시험 선택으로
+</button>
 
-                <div
-                    class="grade"
-                    onclick="openGrade('3학년')"
-                >
-                    3학년
-                </div>
 
+<div class="breadcrumb" id="subjectBreadcrumb"></div>
 
-            </div>
 
-        </section>
+<div class="section-title">
 
+<h2>
+과목별 시험지
+</h2>
 
-    </div>
+<p>
+원하는 과목의 시험지를 확인하세요.
+</p>
+
+</div>
+
+
+<div
+    class="subject-list"
+    id="subjectList"
+>
+
+
+<!-- 테스트용 -->
+
+<div class="subject-card">
+
+<div class="subject-name">
+수학
+</div>
+
+<a
+    class="subject-button"
+    href="./files/june_math.pdf"
+    target="_blank"
+>
+시험지 보기
+</a>
+
+</div>
+
+
+<div class="subject-card">
+
+<div class="subject-name">
+국어
+</div>
+
+<a
+    class="subject-button"
+    href="#"
+    onclick="alert('아직 등록된 시험지가 없습니다.'); return false;"
+>
+시험지 보기
+</a>
+
+</div>
+
+
+<div class="subject-card">
+
+<div class="subject-name">
+영어
+</div>
+
+<a
+    class="subject-button"
+    href="#"
+    onclick="alert('아직 등록된 시험지가 없습니다.'); return false;"
+>
+시험지 보기
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+</div>
 
 </main>
 
@@ -671,11 +688,11 @@
 
 <footer>
 
-    <div class="container">
+<div class="container">
 
-        전인고 시험 족보
+전인고 시험 족보
 
-    </div>
+</div>
 
 </footer>
 
@@ -684,67 +701,147 @@
 <script>
 
 
-/* =========================
-   시험 선택
-========================= */
+/* =====================
+   현재 선택 상태
+===================== */
 
-function showGrades(examName) {
+let selectedGrade = "";
 
-    document
-        .getElementById("homeScreen")
+let selectedSemester = "";
+
+let selectedExam = "";
+
+
+
+/* =====================
+   화면 숨기기
+===================== */
+
+function hideAllScreens() {
+
+    document.getElementById("gradeScreen")
         .style.display = "none";
 
+    document.getElementById("semesterScreen")
+        .style.display = "none";
 
-    document
-        .getElementById("gradeScreen")
-        .style.display = "block";
+    document.getElementById("examScreen")
+        .style.display = "none";
 
-
-    document
-        .getElementById("selectedExam")
-        .textContent = examName;
+    document.getElementById("subjectScreen")
+        .style.display = "none";
 
 }
 
 
 
-/* =========================
-   홈으로 돌아가기
-========================= */
-
-function goHome() {
-
-    document
-        .getElementById("gradeScreen")
-        .style.display = "none";
-
-
-    document
-        .getElementById("homeScreen")
-        .style.display = "block";
-
-}
-
-
-
-/* =========================
+/* =====================
    학년 선택
-========================= */
+===================== */
 
-function openGrade(grade) {
+function selectGrade(grade) {
 
-    alert(
-        grade +
-        " 시험 자료 페이지는 다음 단계에서 만들 예정입니다."
-    );
+    selectedGrade = grade;
+
+    hideAllScreens();
+
+    document.getElementById("semesterScreen")
+        .style.display = "block";
+
+    document.getElementById("semesterBreadcrumb")
+        .textContent = grade;
 
 }
 
 
 
-/* =========================
+/* =====================
+   학기 선택
+===================== */
+
+function selectSemester(semester) {
+
+    selectedSemester = semester;
+
+    hideAllScreens();
+
+    document.getElementById("examScreen")
+        .style.display = "block";
+
+    document.getElementById("examBreadcrumb")
+        .textContent =
+            selectedGrade
+            + " · "
+            + selectedSemester;
+
+}
+
+
+
+/* =====================
+   시험 선택
+===================== */
+
+function selectExam(exam) {
+
+    selectedExam = exam;
+
+    hideAllScreens();
+
+    document.getElementById("subjectScreen")
+        .style.display = "block";
+
+    document.getElementById("subjectBreadcrumb")
+        .textContent =
+            selectedGrade
+            + " · "
+            + selectedSemester
+            + " · "
+            + selectedExam;
+
+}
+
+
+
+/* =====================
+   뒤로가기
+===================== */
+
+function goBack(screen) {
+
+    hideAllScreens();
+
+
+    if (screen === "grade") {
+
+        document.getElementById("gradeScreen")
+            .style.display = "block";
+
+    }
+
+
+    if (screen === "semester") {
+
+        document.getElementById("semesterScreen")
+            .style.display = "block";
+
+    }
+
+
+    if (screen === "exam") {
+
+        document.getElementById("examScreen")
+            .style.display = "block";
+
+    }
+
+}
+
+
+
+/* =====================
    검색
-========================= */
+===================== */
 
 document
     .getElementById("searchInput")
@@ -753,7 +850,7 @@ document
         function() {
 
             console.log(
-                "검색:",
+                "검색어:",
                 this.value
             );
 
